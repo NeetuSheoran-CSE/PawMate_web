@@ -1,0 +1,166 @@
+PAWMATE - FILE STRUCTURE
+========================
+
+pawmate/
+|-- backend/
+|   |-- src/
+|   |   |-- middleware/
+|   |   |   |-- auth.js
+|   |   |   |-- error.js
+|   |   |   `-- validate.js
+|   |   |-- models/
+|   |   |   |-- Booking.js
+|   |   |   |-- ContactMessage.js
+|   |   |   |-- Conversation.js
+|   |   |   |-- Pet.js
+|   |   |   |-- plugins.js
+|   |   |   |-- Review.js
+|   |   |   |-- User.js
+|   |   |   `-- Walker.js
+|   |   |-- routes/
+|   |   |   |-- admin.js
+|   |   |   |-- auth.js
+|   |   |   |-- bookings.js
+|   |   |   |-- contact.js
+|   |   |   |-- conversations.js
+|   |   |   |-- pets.js
+|   |   |   |-- reviews.js
+|   |   |   |-- users.js
+|   |   |   `-- walkers.js
+|   |   |-- seed/
+|   |   |   `-- seed.js
+|   |   |-- utils/
+|   |   |   |-- constants.js
+|   |   |   |-- dates.js
+|   |   |   |-- escapeRegex.js
+|   |   |   |-- helpers.js
+|   |   |   |-- httpError.js
+|   |   |   |-- pricing.js
+|   |   |   `-- serialize.js
+|   |   |-- app.js
+|   |   |-- config.js
+|   |   |-- db.js
+|   |   `-- index.js
+|   |-- tests/
+|   |   `-- api.test.js
+|   |-- uploads/
+|   |   `-- .gitkeep
+|   |-- .env.example
+|   |-- .gitignore
+|   |-- package-lock.json
+|   |-- package.json
+|   `-- README.md
+|-- frontend/
+|   |-- public/
+|   |   `-- favicon.svg
+|   |-- src/
+|   |   |-- components/
+|   |   |   |-- booking/
+|   |   |   |   |-- BookingCard.jsx
+|   |   |   |   |-- BookingDetails.jsx
+|   |   |   |   |-- CancelModal.jsx
+|   |   |   |   |-- PaymentForm.jsx
+|   |   |   |   |-- ReviewModal.jsx
+|   |   |   |   `-- useBookingActions.jsx
+|   |   |   |-- calendar/
+|   |   |   |   `-- AvailabilityCalendar.jsx
+|   |   |   |-- chat/
+|   |   |   |   `-- ChatWindow.jsx
+|   |   |   |-- dashboard/
+|   |   |   |   |-- AvailabilityEditor.jsx
+|   |   |   |   |-- StatCard.jsx
+|   |   |   |   `-- VerificationCard.jsx
+|   |   |   |-- illustrations/
+|   |   |   |   `-- HeroIllustration.jsx
+|   |   |   |-- layout/
+|   |   |   |   |-- Footer.jsx
+|   |   |   |   |-- Layout.jsx
+|   |   |   |   |-- Navbar.jsx
+|   |   |   |   |-- RequireAuth.jsx
+|   |   |   |   `-- ScrollToTop.jsx
+|   |   |   |-- pets/
+|   |   |   |   `-- PetForm.jsx
+|   |   |   |-- ui/
+|   |   |   |   |-- Accordion.jsx
+|   |   |   |   |-- Avatar.jsx
+|   |   |   |   |-- Badge.jsx
+|   |   |   |   |-- Button.jsx
+|   |   |   |   |-- ChipSelect.jsx
+|   |   |   |   |-- EmptyState.jsx
+|   |   |   |   |-- Field.jsx
+|   |   |   |   |-- Logo.jsx
+|   |   |   |   |-- Modal.jsx
+|   |   |   |   |-- PageHeader.jsx
+|   |   |   |   |-- Rating.jsx
+|   |   |   |   |-- Skeleton.jsx
+|   |   |   |   |-- Spinner.jsx
+|   |   |   |   |-- StatusBadge.jsx
+|   |   |   |   `-- Tabs.jsx
+|   |   |   `-- walker/
+|   |   |       |-- WalkerCard.jsx
+|   |   |       `-- WalkerFilters.jsx
+|   |   |-- context/
+|   |   |   |-- AuthContext.jsx
+|   |   |   `-- ToastContext.jsx
+|   |   |-- data/
+|   |   |   |-- constants.js
+|   |   |   |-- content.js
+|   |   |   `-- seed.js
+|   |   |-- hooks/
+|   |   |   |-- useDebounce.js
+|   |   |   |-- useDocumentTitle.js
+|   |   |   `-- useForm.js
+|   |   |-- pages/
+|   |   |   |-- About.jsx
+|   |   |   |-- Auth.jsx
+|   |   |   |-- BecomeWalker.jsx
+|   |   |   |-- Booking.jsx
+|   |   |   |-- Contact.jsx
+|   |   |   |-- Dashboard.jsx
+|   |   |   |-- FindWalker.jsx
+|   |   |   |-- Home.jsx
+|   |   |   |-- HowItWorks.jsx
+|   |   |   |-- Messages.jsx
+|   |   |   |-- NotFound.jsx
+|   |   |   |-- OwnerDashboard.jsx
+|   |   |   |-- Profile.jsx
+|   |   |   |-- Services.jsx
+|   |   |   |-- WalkerDashboard.jsx
+|   |   |   `-- WalkerProfile.jsx
+|   |   |-- services/
+|   |   |   |-- api.js
+|   |   |   |-- http.js
+|   |   |   |-- httpApi.js
+|   |   |   `-- mockApi.js
+|   |   |-- styles/
+|   |   |   |-- base.css
+|   |   |   |-- components.css
+|   |   |   |-- layout.css
+|   |   |   `-- pages.css
+|   |   |-- utils/
+|   |   |   |-- format.js
+|   |   |   `-- validators.js
+|   |   |-- App.jsx
+|   |   `-- main.jsx
+|   |-- .env.example
+|   |-- .gitignore
+|   |-- index.html
+|   |-- package-lock.json
+|   |-- package.json
+|   `-- vite.config.js
+|-- .gitignore
+|-- package-lock.json
+|-- package.json
+`-- README.md
+
+WHERE TO EDIT
+-------------
+Page design ............ frontend/src/pages/ and frontend/src/styles/
+Colours ................ top of frontend/src/styles/base.css
+New API call (frontend)  frontend/src/services/httpApi.js (and mockApi.js)
+API behaviour .......... backend/src/routes/
+Database fields ........ backend/src/models/
+Settings ............... backend/.env (copy from backend/.env.example)
+
+Files created after you install / run (not in the zip):
+  node_modules/ (root, frontend, backend), frontend/dist/, backend/.env
