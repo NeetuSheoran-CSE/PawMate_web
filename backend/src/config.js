@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import fs from 'node:fs'
 import path from 'node:path'
 
 // the backend/ folder, no matter where the command is run from
@@ -7,6 +8,7 @@ const backendDir = path.resolve(import.meta.dirname, '..')
 dotenv.config({ path: path.join(backendDir, '.env'), quiet: true })
 const env = process.env
 const isProd = env.NODE_ENV === 'production'
+const clientDist = path.resolve(backendDir, env.CLIENT_DIST || '../frontend/dist')
 
 export const config = {
   env: env.NODE_ENV || 'development',
@@ -23,8 +25,9 @@ export const config = {
   adminToken: env.ADMIN_TOKEN || '',
   rateLimitMax: Number(env.RATE_LIMIT_MAX) || 600, // requests per 15 minutes per IP
   authRateLimitMax: Number(env.AUTH_RATE_LIMIT_MAX) || 30, // login/signup attempts per 15 minutes per IP
-  serveClient: env.SERVE_CLIENT === 'true',
-  clientDist: path.resolve(backendDir, env.CLIENT_DIST || '../frontend/dist'),
+  clientDist,
+  // host the built React app from this server whenever the build exists, so one deploy serves API + UI
+  serveClient: env.SERVE_CLIENT ? env.SERVE_CLIENT === 'true' : fs.existsSync(path.join(clientDist, 'index.html')),
 }
 
 if (isProd && config.jwtSecret.length < 32) {
